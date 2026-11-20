@@ -3,710 +3,532 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MELLSTROY — деревянные изделия для мебели</title>
-<meta name="description" content="MELLSTROY — производство деревянных изделий для мебели: мебельный щит, столешницы, фасады, ножки, балясины. Работаем с мастерскими, фабриками и частными клиентами.">
+<title>MELLSTROY — деревянные изделия для мебели от производителя</title>
+<meta name="description" content="MELLSTROY — столярное производство в Ереване. Мебельный щит, столешницы, фасады, ножки и балясины из массива по вашим размерам.">
+<meta name="theme-color" content="#FFFFFF">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
+    --ink:#16140F;
+    --text:#2B2823;
+    --muted:#6E695F;
+    --line:#E3DED4;
+    --surface:#F6F4EF;
     --white:#FFFFFF;
-    --cream:#FFFAEB;
-    --yellow:#FFC72C;
-    --yellow-soft:#FFF1C2;
-    --yellow-deep:#E5A900;
-    --ink:#1E1B16;
-    --muted:#6B6457;
-    --line:#EFE6CF;
-    --wood:#C08A4E;
-    --radius:14px;
-    --shadow:0 10px 30px -18px rgba(60,45,10,.35);
+    --accent:#F2B705;
+    --accent-hover:#E0A800;
+    --head:"Inter Tight","Inter",system-ui,sans-serif;
+    --body:"Inter",system-ui,sans-serif;
+    --pad:20px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-  body{font-family:"Manrope",system-ui,sans-serif;color:var(--ink);background:var(--white);line-height:1.55;font-size:16px;padding-bottom:76px}
-  img,svg{display:block;max-width:100%}
+  body{font-family:var(--body);color:var(--text);background:var(--white);font-size:16px;line-height:1.6;padding-bottom:72px;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%}
   a{color:inherit;text-decoration:none}
   button,input,select,textarea{font:inherit;color:inherit}
-  h1,h2,h3{font-family:"Manrope",sans-serif;font-weight:800;line-height:1.12;letter-spacing:-.025em}
-  h2{font-size:26px;margin-bottom:10px}
-  h3{font-size:17px}
-  .wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
-  section{padding:56px 0;scroll-margin-top:64px}
-  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
-  .eyebrow::before{content:"";width:18px;height:3px;border-radius:2px;background:var(--yellow)}
-  .lead{color:var(--muted);max-width:560px}
-  .mark{background:linear-gradient(transparent 58%,var(--yellow) 58%,var(--yellow) 92%,transparent 92%);padding:0 2px}
+  h1,h2,h3{font-family:var(--head);font-weight:600;color:var(--ink);letter-spacing:-.02em;line-height:1.15}
+  h2{font-size:28px;max-width:640px}
+  h3{font-size:17px;letter-spacing:-.01em}
+  p{max-width:620px}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 var(--pad)}
+  section{padding:64px 0;scroll-margin-top:60px}
+  .surface{background:var(--surface)}
 
-  /* ---------- buttons ---------- */
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 24px;border-radius:14px;border:0;font-weight:700;font-size:16px;cursor:pointer;transition:transform .15s,background .15s,box-shadow .15s}
-  .btn:active{transform:scale(.98)}
-  .btn-yellow{background:var(--yellow);color:var(--ink);box-shadow:0 8px 20px -10px rgba(229,169,0,.9)}
-  .btn-yellow:hover{background:#FFD24F}
-  .btn-ghost{background:var(--white);border:1.5px solid var(--ink)}
-  .btn-ghost:hover{background:var(--cream)}
-  .btn-dark{background:var(--ink);color:var(--white)}
-  .btn-block{width:100%}
+  /* заголовок раздела: номер + название */
+  .sec-head{margin-bottom:36px}
+  .label{display:flex;align-items:center;gap:12px;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+  .label b{color:var(--ink);font-weight:600}
+  .label::after{content:"";flex:0 0 32px;height:1px;background:var(--accent);order:-1}
+  .sec-head p{color:var(--muted);margin-top:14px}
 
-  /* ---------- header ---------- */
-  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  .head{display:flex;align-items:center;justify-content:space-between;height:64px}
-  .logo{display:flex;align-items:center;gap:10px;font-family:"Manrope",sans-serif;font-weight:800;font-weight:700;font-size:18px;letter-spacing:.02em}
-  .logo-mark{width:34px;height:34px;border-radius:10px;background:var(--yellow);display:grid;place-items:center}
-  .nav{display:none;gap:26px;font-weight:600;font-size:15px}
-  .nav a:hover{color:var(--yellow-deep)}
-  .head-right{display:flex;align-items:center;gap:10px}
-  .head-phone{display:none;font-weight:700}
-  .burger{width:46px;height:46px;border-radius:12px;border:1.5px solid var(--line);background:var(--white);display:grid;place-items:center;cursor:pointer}
-  .burger span,.burger span::before,.burger span::after{display:block;width:18px;height:2px;background:var(--ink);border-radius:2px;position:relative;transition:.2s}
-  .burger span::before,.burger span::after{content:"";position:absolute;left:0}
-  .burger span::before{top:-6px}.burger span::after{top:6px}
-  .menu-open .burger span{background:transparent}
-  .menu-open .burger span::before{top:0;transform:rotate(45deg)}
-  .menu-open .burger span::after{top:0;transform:rotate(-45deg)}
-  .mobile-menu{position:fixed;inset:64px 0 0 0;background:var(--white);z-index:49;padding:24px 20px;display:flex;flex-direction:column;gap:4px;transform:translateY(-8px);opacity:0;pointer-events:none;transition:.2s}
-  .menu-open .mobile-menu{opacity:1;transform:none;pointer-events:auto}
-  .mobile-menu a{font-family:"Manrope",sans-serif;font-weight:800;font-size:20px;padding:14px 0;border-bottom:1px solid var(--line)}
-  .mobile-menu .mm-contacts{margin-top:auto;padding-bottom:90px;color:var(--muted);font-size:15px}
-  .mobile-menu .mm-contacts b{display:block;color:var(--ink);font-size:20px;margin-bottom:4px}
+  /* кнопки */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border:1px solid transparent;border-radius:2px;font-weight:600;font-size:15px;cursor:pointer;transition:background .15s,border-color .15s,color .15s}
+  .btn-primary{background:var(--accent);color:var(--ink)}
+  .btn-primary:hover{background:var(--accent-hover)}
+  .btn-line{border-color:var(--ink);color:var(--ink);background:transparent}
+  .btn-line:hover{background:var(--ink);color:var(--white)}
+  .btn-full{width:100%}
+  .link{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--ink);border-bottom:1px solid var(--accent);padding-bottom:2px}
+  .link:hover{border-color:var(--ink)}
 
-  /* ---------- hero (вопрос 1) ---------- */
-  .hero{padding:28px 0 48px;background:linear-gradient(180deg,var(--cream),var(--white))}
-  .hero-grid{display:grid;gap:28px}
-  .hero h1{font-size:32px;margin:6px 0 14px}
-  .hero p{color:var(--muted);font-size:17px;margin-bottom:22px}
-  .hero-actions{display:grid;gap:10px}
-  .hero-points{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
-  .chip{font-size:13px;font-weight:600;padding:7px 12px;border-radius:999px;background:var(--white);border:1px solid var(--line)}
-  .hero-art{position:relative;border-radius:18px;background:#2a241c;aspect-ratio:4/3.4;overflow:hidden}
-  .hero-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-  .hero-art::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(20,16,10,.35))}
-  .hero-badge{z-index:1}
-  .hero-badge{position:absolute;left:14px;bottom:14px;background:var(--white);border-radius:14px;padding:10px 14px;box-shadow:var(--shadow);font-size:13px;color:var(--muted)}
-  .hero-badge b{display:block;font-family:"Manrope",sans-serif;font-weight:800;font-size:18px;color:var(--ink)}
+  /* шапка */
+  header{position:sticky;top:0;z-index:50;background:var(--white);border-bottom:1px solid var(--line)}
+  .head{height:60px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .logo{display:flex;align-items:center;gap:10px;font-family:var(--head);font-weight:600;font-size:17px;letter-spacing:.12em;color:var(--ink)}
+  .logo i{width:10px;height:10px;background:var(--accent);display:block}
+  .nav{display:none;gap:32px;font-size:14px;font-weight:500;color:var(--muted)}
+  .nav a:hover{color:var(--ink)}
+  .head-r{display:flex;align-items:center;gap:20px}
+  .phone{display:none;font-weight:600;font-size:15px;color:var(--ink)}
+  .burger{width:44px;height:44px;display:grid;place-items:center;background:none;border:0;cursor:pointer;margin-right:-10px}
+  .burger span,.burger span::before{display:block;width:22px;height:1.5px;background:var(--ink);position:relative;transition:.2s}
+  .burger span::before{content:"";position:absolute;top:7px;left:0;width:14px}
+  .burger span{transform:translateY(-3.5px)}
+  .open .burger span{transform:rotate(45deg)}
+  .open .burger span::before{top:0;width:22px;transform:rotate(-90deg)}
+  .menu{position:fixed;inset:60px 0 0;z-index:49;background:var(--white);padding:8px var(--pad) 100px;display:flex;flex-direction:column;opacity:0;visibility:hidden;transition:.2s}
+  .open .menu{opacity:1;visibility:visible}
+  .menu a{font-family:var(--head);font-size:22px;font-weight:500;color:var(--ink);padding:16px 0;border-bottom:1px solid var(--line)}
+  .menu .menu-foot{margin-top:auto;color:var(--muted);font-size:14px}
+  .menu .menu-foot a{border:0;padding:0 0 4px;font-size:22px;display:block}
 
-  /* ---------- benefits (вопрос 2) ---------- */
-  .cards{display:grid;gap:12px;margin-top:26px}
-  .card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
-  .benefit{display:flex;gap:14px;align-items:flex-start}
-  .ico{flex:none;width:44px;height:44px;border-radius:12px;background:var(--yellow-soft);display:grid;place-items:center}
-  .benefit p{color:var(--muted);font-size:15px;margin-top:4px}
+  /* первый экран */
+  .hero{padding:0 0 56px}
+  .hero-img{margin:0 calc(var(--pad) * -1);aspect-ratio:4/3;background:#3a3127;overflow:hidden}
+  .hero-img img{width:100%;height:100%;object-fit:cover}
+  .hero-text{padding-top:32px}
+  .hero h1{font-size:34px;letter-spacing:-.03em;margin-bottom:18px}
+  .hero-text>p{color:var(--muted);font-size:17px;margin-bottom:28px}
+  .actions{display:grid;gap:10px}
+  .facts{display:grid;grid-template-columns:repeat(3,1fr);margin-top:36px;border-top:1px solid var(--line)}
+  .facts div{padding:16px 12px 0 0}
+  .facts div+div{padding-left:14px;border-left:1px solid var(--line)}
+  .facts b{display:block;font-family:var(--head);font-weight:600;font-size:22px;color:var(--ink);letter-spacing:-.02em}
+  .facts span{font-size:13px;color:var(--muted);line-height:1.4;display:block;margin-top:2px}
 
-  /* ---------- audience (вопрос 3) ---------- */
-  .tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:22px -20px 0;padding:0 20px 4px}
-  .tabs::-webkit-scrollbar{display:none}
-  .tab{flex:none;padding:11px 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--white);font-weight:700;font-size:14px;cursor:pointer}
-  .tab[aria-selected="true"]{background:var(--ink);color:var(--white);border-color:var(--ink)}
-  .aud-panel{margin-top:14px;background:var(--cream);border-radius:var(--radius);padding:22px}
-  .aud-panel ul{list-style:none;display:grid;gap:10px;margin:14px 0 18px}
-  .aud-panel li{display:flex;gap:10px;font-size:15px}
-  .aud-panel li::before{content:"";flex:none;width:20px;height:20px;margin-top:2px;border-radius:6px;background:var(--yellow) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 10.5l3 3 7-7' fill='none' stroke='%231E1B16' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
-  .aud-tag{display:inline-block;font-size:12px;font-weight:700;background:var(--white);padding:5px 10px;border-radius:8px}
+  /* преимущества */
+  .grid4{display:grid;border-top:1px solid var(--line)}
+  .item{padding:24px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:44px 1fr;gap:0 8px}
+  .item .n{font-family:var(--head);font-size:14px;font-weight:600;color:var(--accent-hover);padding-top:2px}
+  .item p{grid-column:2;color:var(--muted);font-size:15px;margin-top:6px}
 
-  /* ---------- catalog & prices (вопрос 4) ---------- */
-  .cat{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
-  .prod{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
-  .prod-img{background:var(--cream);aspect-ratio:1/0.8;overflow:hidden}
-  .prod-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-  .prod:hover .prod-img img{transform:scale(1.04)}
-  .prod-body{padding:12px 14px 16px;display:flex;flex-direction:column;gap:4px;flex:1}
-  .prod-body h3{font-size:14px}
-  .prod-body small{color:var(--muted);font-size:12.5px;line-height:1.4}
-  .price{margin-top:auto;padding-top:8px;font-weight:800;font-size:15px}
-  .price span{font-weight:500;color:var(--muted);font-size:12px}
-  .price-note{margin-top:16px;font-size:14px;color:var(--muted);display:flex;gap:10px;align-items:flex-start;background:var(--cream);border-radius:14px;padding:14px}
+  /* для кого */
+  .segs{display:grid;border-top:1px solid var(--ink)}
+  .seg{padding:26px 0;border-bottom:1px solid var(--line)}
+  .seg small{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+  .seg ul{list-style:none;margin:14px 0 18px;display:grid;gap:8px}
+  .seg li{position:relative;padding-left:20px;font-size:15px;color:var(--text)}
+  .seg li::before{content:"";position:absolute;left:0;top:10px;width:8px;height:1.5px;background:var(--accent-hover)}
 
-  .calc{margin-top:28px;background:var(--ink);color:var(--white);border-radius:18px;padding:22px;position:relative;overflow:hidden}
-  .calc h3{font-size:20px;margin-bottom:4px}
-  .calc>p{color:#BDB5A4;font-size:14px;margin-bottom:18px}
-  .field{display:grid;gap:6px;margin-bottom:14px}
-  .field label{font-size:13px;font-weight:600;color:#D8D0BE}
-  .seg{display:flex;flex-wrap:wrap;gap:6px}
-  .seg input{position:absolute;opacity:0;pointer-events:none}
-  .seg label{padding:10px 13px;border-radius:10px;background:#2E2A22;color:var(--white);font-size:14px;font-weight:600;cursor:pointer;border:1.5px solid transparent}
-  .seg input:checked+label{background:var(--yellow);color:var(--ink)}
-  .seg input:focus-visible+label{border-color:var(--yellow)}
-  .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  .num{width:100%;height:50px;border-radius:12px;border:1.5px solid #3A352C;background:#2E2A22;color:var(--white);padding:0 14px;font-size:16px}
-  .num:focus{outline:none;border-color:var(--yellow)}
-  .calc-res{margin-top:6px;padding:16px;border-radius:16px;background:var(--yellow);color:var(--ink)}
-  .calc-res .sum{font-family:"Manrope",sans-serif;font-weight:800;font-size:26px}
-  .calc-res small{display:block;font-size:12.5px;opacity:.75;margin-top:4px}
-  .calc .btn{margin-top:12px}
+  /* каталог */
+  .cat{display:grid;grid-template-columns:1fr 1fr;gap:28px 14px}
+  .prod-img{aspect-ratio:4/3;background:var(--surface);overflow:hidden;margin-bottom:14px}
+  .prod-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+  .prod:hover .prod-img img{transform:scale(1.03)}
+  .prod h3{font-size:15.5px;margin-bottom:4px}
+  .prod p{font-size:13.5px;color:var(--muted);line-height:1.45}
+  .price{margin-top:10px;font-weight:600;color:var(--ink);font-size:15px}
+  .price span{font-weight:400;color:var(--muted);font-size:13px}
+  .note{margin-top:36px;padding:18px 0 0;border-top:1px solid var(--line);font-size:14.5px;color:var(--muted);max-width:none}
+  .note b{color:var(--ink)}
 
-  /* ---------- trust (вопрос 5) ---------- */
-  .stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:26px}
-  .stat{background:var(--cream);border-radius:var(--radius);padding:18px}
-  .stat b{display:block;font-family:"Manrope",sans-serif;font-weight:800;font-size:26px}
+  /* калькулятор */
+  .calc{margin-top:56px;border:1px solid var(--line);background:var(--white)}
+  .calc-in{padding:26px var(--pad)}
+  .calc h3{font-size:22px;margin-bottom:6px}
+  .calc-in>p{color:var(--muted);font-size:14.5px;margin-bottom:24px}
+  .f{display:grid;gap:6px;margin-bottom:16px}
+  .f label{font-size:13px;font-weight:500;color:var(--muted)}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .ctl{width:100%;height:50px;border:1px solid var(--line);border-radius:2px;background:var(--white);padding:0 14px;font-size:16px;color:var(--ink);appearance:none;-webkit-appearance:none}
+  select.ctl{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%2316140F' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px}
+  .ctl:focus,textarea.ctl:focus{outline:none;border-color:var(--ink)}
+  .calc-out{background:var(--surface);padding:24px var(--pad);border-top:1px solid var(--line)}
+  .calc-out small{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .sum{font-family:var(--head);font-size:34px;font-weight:600;color:var(--ink);letter-spacing:-.03em;margin:4px 0 2px}
+  .calc-out p{font-size:13.5px;color:var(--muted);margin-bottom:18px}
+
+  /* о компании */
+  .about-img{aspect-ratio:3/2;background:#3a3127;overflow:hidden;margin-bottom:32px}
+  .about-img img{width:100%;height:100%;object-fit:cover}
+  .stats{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--ink);margin-top:32px}
+  .stat{padding:20px 0;border-bottom:1px solid var(--line)}
+  .stat:nth-child(odd){padding-right:14px;border-right:1px solid var(--line)}
+  .stat:nth-child(even){padding-left:18px}
+  .stat b{display:block;font-family:var(--head);font-size:30px;font-weight:600;color:var(--ink);letter-spacing:-.03em}
   .stat span{font-size:13.5px;color:var(--muted)}
-  .reviews{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:20px -20px 0;padding:0 20px 8px;scrollbar-width:none}
-  .reviews::-webkit-scrollbar{display:none}
-  .review{flex:0 0 86%;scroll-snap-align:start;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column;gap:12px}
-  .stars{color:var(--yellow-deep);letter-spacing:2px;font-size:15px}
-  .review p{font-size:15px}
-  .who{display:flex;align-items:center;gap:10px;margin-top:auto}
-  .ava{width:40px;height:40px;border-radius:50%;background:var(--yellow);display:grid;place-items:center;font-weight:800}
-  .who small{display:block;color:var(--muted);font-size:12.5px}
-  .docs{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .docs{margin-top:24px;font-size:14px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 22px}
+  .docs span::before{content:"— ";color:var(--accent-hover)}
 
-  /* ---------- portfolio (вопрос 6) ---------- */
-  .works{display:grid;gap:12px;margin-top:26px}
-  .work{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:var(--white)}
-  .work-img{aspect-ratio:16/10;background:var(--yellow-soft)}
-  .work-img{overflow:hidden}
+  /* отзывы */
+  .quotes{display:grid;gap:0;border-top:1px solid var(--line)}
+  .quote{padding:26px 0;border-bottom:1px solid var(--line)}
+  .quote p{font-size:16.5px;color:var(--ink);line-height:1.55}
+  .quote p::before{content:"«";color:var(--accent-hover)}
+  .quote p::after{content:"»";color:var(--accent-hover)}
+  .who{margin-top:14px;font-size:14px;color:var(--muted)}
+  .who b{color:var(--ink);font-weight:600}
+
+  /* работы */
+  .works{display:grid;gap:40px}
+  .work-img{aspect-ratio:3/2;overflow:hidden;background:var(--surface);margin-bottom:16px}
   .work-img img{width:100%;height:100%;object-fit:cover}
-  .work-body{padding:16px 18px 18px}
-  .work-body dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin-top:10px;font-size:14px}
-  .work-body dt{color:var(--muted)}
-  .work-body dd{font-weight:600}
+  .work h3{font-size:18px;margin-bottom:12px}
+  .work dl{display:grid;grid-template-columns:92px 1fr;font-size:14.5px;border-top:1px solid var(--line)}
+  .work dt,.work dd{padding:9px 0;border-bottom:1px solid var(--line)}
+  .work dt{color:var(--muted)}
+  .work dd{color:var(--ink)}
 
-  /* ---------- process (вопрос 7) ---------- */
-  .steps{list-style:none;display:grid;gap:0;margin-top:26px;counter-reset:s}
-  .step{position:relative;padding:0 0 26px 58px;counter-increment:s}
-  .step::before{content:counter(s);position:absolute;left:0;top:0;width:42px;height:42px;border-radius:12px;background:var(--yellow);display:grid;place-items:center;font-family:"Manrope",sans-serif;font-weight:800;font-weight:700}
-  .step::after{content:"";position:absolute;left:20px;top:48px;bottom:6px;width:2px;background:repeating-linear-gradient(var(--line) 0 6px,transparent 6px 11px)}
-  .step:last-child::after{display:none}
-  .step p{color:var(--muted);font-size:15px;margin-top:4px}
-  .pay{display:grid;gap:12px;margin-top:8px}
-  .pay .card h3{margin-bottom:8px;font-size:15px}
-  .pay .card p{color:var(--muted);font-size:14.5px}
+  /* процесс */
+  .steps{list-style:none;counter-reset:s;display:grid;border-top:1px solid var(--line)}
+  .steps li{counter-increment:s;padding:22px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:44px 1fr;gap:0 8px}
+  .steps li::before{content:"0" counter(s);font-family:var(--head);font-weight:600;font-size:14px;color:var(--accent-hover);padding-top:2px}
+  .steps p{grid-column:2;color:var(--muted);font-size:15px;margin-top:6px}
+  .terms{display:grid;gap:24px;margin-top:48px}
+  .terms h3{font-size:15px;margin-bottom:6px}
+  .terms p{font-size:14.5px;color:var(--muted)}
+  .proc-img{aspect-ratio:3/2;overflow:hidden;background:var(--surface);margin-top:40px}
+  .proc-img img{width:100%;height:100%;object-fit:cover}
 
-  /* ---------- guarantees (вопрос 8) ---------- */
-  .guar{background:var(--yellow);border-radius:18px;padding:28px 22px}
-  .guar .eyebrow{color:var(--ink)}
-  .guar .eyebrow::before{background:var(--ink)}
-  .guar-list{display:grid;gap:10px;margin-top:20px}
-  .g{background:var(--white);border-radius:16px;padding:16px 18px}
-  .g h3{font-size:15px;margin-bottom:4px}
-  .g p{font-size:14.5px;color:var(--muted)}
-
-  /* ---------- faq ---------- */
-  .faq{margin-top:22px;display:grid;gap:8px}
-  details{border:1px solid var(--line);border-radius:16px;background:var(--white)}
-  summary{list-style:none;cursor:pointer;padding:16px 18px;font-weight:700;display:flex;justify-content:space-between;gap:12px;align-items:center}
+  /* гарантии */
+  .guar{display:grid;border-top:1px solid var(--line)}
+  .g{padding:22px 0 22px 18px;border-bottom:1px solid var(--line);position:relative}
+  .g::before{content:"";position:absolute;left:0;top:26px;width:3px;height:18px;background:var(--accent)}
+  .g p{color:var(--muted);font-size:15px;margin-top:6px}
+  .faq{margin-top:56px}
+  .faq h3{font-size:20px;margin-bottom:12px}
+  details{border-bottom:1px solid var(--line)}
+  details:first-of-type{border-top:1px solid var(--line)}
+  summary{list-style:none;cursor:pointer;padding:18px 0;font-weight:500;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:16px}
   summary::-webkit-details-marker{display:none}
-  summary::after{content:"+";flex:none;width:28px;height:28px;border-radius:8px;background:var(--yellow-soft);display:grid;place-items:center;font-size:18px;transition:transform .2s}
-  details[open] summary::after{transform:rotate(45deg)}
-  details p{padding:0 18px 16px;color:var(--muted);font-size:15px}
+  summary::after{content:"";flex:none;width:10px;height:10px;border-right:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);transform:rotate(45deg) translate(-3px,-3px);transition:transform .2s}
+  details[open] summary::after{transform:rotate(-135deg)}
+  details p{padding:0 0 18px;color:var(--muted);font-size:15px}
 
-  /* ---------- contacts & form (вопросы 9, 10) ---------- */
-  .contact-grid{display:grid;gap:16px;margin-top:26px}
-  .c-list{display:grid;gap:10px}
-  .c-item{display:flex;gap:14px;align-items:center;padding:16px;border:1px solid var(--line);border-radius:16px}
-  .c-item small{display:block;color:var(--muted);font-size:13px}
-  .c-item b{font-size:16px}
-  .messengers{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  .map{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);aspect-ratio:16/10;background:var(--cream)}
-  .map svg{width:100%;height:100%}
-  .form{background:var(--cream);border-radius:24px;padding:22px}
-  .form h3{font-size:20px;margin-bottom:6px}
-  .form>p{color:var(--muted);font-size:14.5px;margin-bottom:16px}
-  .inp{width:100%;min-height:52px;border-radius:12px;border:1.5px solid var(--line);background:var(--white);padding:12px 14px;font-size:16px;margin-bottom:10px}
-  .inp:focus{outline:none;border-color:var(--yellow-deep)}
-  textarea.inp{min-height:90px;resize:vertical}
-  .consent{font-size:12px;color:var(--muted);margin-top:10px}
-  .form-done{display:none;text-align:center;padding:10px 0}
-  .form-done .ico{margin:0 auto 12px;width:56px;height:56px;background:var(--yellow)}
-  .form-done p{color:var(--muted);font-size:14.5px;margin:6px 0 16px}
-  .form-done .messengers{margin-top:4px}
+  /* контакты */
+  .contacts{display:grid;gap:40px}
+  .clist{border-top:1px solid var(--ink)}
+  .crow{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:16px 0;border-bottom:1px solid var(--line);font-size:15px}
+  .crow span{color:var(--muted)}
+  .crow a,.crow div{color:var(--ink);font-weight:500}
+  .msg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+  .form{background:var(--surface);padding:28px var(--pad)}
+  .form h3{font-size:22px;margin-bottom:6px}
+  .form>div>p{color:var(--muted);font-size:14.5px;margin-bottom:22px}
+  .form .ctl{margin-bottom:10px;border-color:#D8D2C6}
+  textarea.ctl{height:auto;min-height:100px;padding:13px 14px;resize:vertical}
+  .consent{font-size:12px;color:var(--muted);margin-top:12px}
+  .done{display:none}
+  .done p{color:var(--muted);font-size:14.5px;margin:8px 0 20px}
 
-  footer{background:var(--ink);color:#CFC7B5;padding:36px 0 30px;font-size:14px}
+  footer{background:var(--ink);color:#A8A196;padding:48px 0 32px;font-size:14px}
   footer .logo{color:var(--white);margin-bottom:12px}
-  .f-grid{display:grid;gap:20px}
-  .f-grid a{display:block;padding:3px 0}
-  .f-grid a:hover{color:var(--yellow)}
-  .f-title{color:var(--white);font-weight:700;margin-bottom:6px}
-  .copy{border-top:1px solid #36312A;margin-top:24px;padding-top:16px;font-size:12.5px;color:#8F8775}
+  .fgrid{display:grid;gap:28px}
+  .fgrid h4{color:var(--white);font-weight:600;font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
+  .fgrid a{display:block;padding:3px 0}
+  .fgrid a:hover{color:var(--white)}
+  .copy{margin-top:40px;padding-top:20px;border-top:1px solid #2E2A23;font-size:12.5px;color:#7A7368}
 
-  /* ---------- sticky mobile bar ---------- */
-  .bar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:grid;grid-template-columns:52px 1fr;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line)}
-  .bar .btn{min-height:50px}
-  .bar .call{padding:0;background:var(--yellow-soft)}
+  /* нижняя панель на телефоне */
+  .bar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:grid;grid-template-columns:1fr 1.4fr;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:var(--white);border-top:1px solid var(--line)}
+  .bar .btn{min-height:48px;padding:0 12px}
 
-  /* ---------- reveal ---------- */
-  .rv{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
-  .rv.in{opacity:1;transform:none}
-  @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
-
-
-  .photo-wide{margin-top:24px;border-radius:var(--radius);overflow:hidden;position:relative;aspect-ratio:16/10;background:#2a241c}
-  .photo-wide img{width:100%;height:100%;object-fit:cover}
-  .photo-wide figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 18px 16px;color:#fff;font-size:14px;font-weight:600;background:linear-gradient(transparent,rgba(15,12,8,.75))}
-  .photo-tall{border-radius:var(--radius);overflow:hidden;aspect-ratio:16/10;background:#2a241c}
-  .photo-tall img{width:100%;height:100%;object-fit:cover}
-  .card{box-shadow:0 1px 0 rgba(30,27,22,.03)}
-  @media (min-width:640px){.photo-tall{grid-column:1/-1}}
-  @media (min-width:960px){.photo-wide{aspect-ratio:21/8}}
-
-  /* ---------- tablet / desktop ---------- */
-  @media (min-width:640px){
-    .hero-actions{grid-template-columns:auto auto;justify-content:start}
-    .cat{grid-template-columns:repeat(3,1fr)}
+  @media (min-width:700px){
+    :root{--pad:32px}
+    .actions{grid-template-columns:auto auto;justify-content:start}
+    .grid4{grid-template-columns:1fr 1fr;column-gap:40px}
+    .cat{grid-template-columns:repeat(3,1fr);gap:40px 24px}
+    .segs{grid-template-columns:1fr 1fr;column-gap:40px}
+    .quotes{grid-template-columns:repeat(3,1fr);column-gap:32px}
+    .terms{grid-template-columns:repeat(3,1fr)}
+    .guar{grid-template-columns:1fr 1fr;column-gap:40px}
     .stats{grid-template-columns:repeat(4,1fr)}
-    .review{flex-basis:46%}
-    .works{grid-template-columns:1fr 1fr}
-    .pay{grid-template-columns:1fr 1fr}
-    .guar-list{grid-template-columns:1fr 1fr}
-    .cards{grid-template-columns:1fr 1fr}
+    .stat,.stat:nth-child(odd),.stat:nth-child(even){padding:22px 18px 22px 0;border-right:1px solid var(--line)}
+    .stat+.stat{padding-left:18px}
+    .stat:last-child{border-right:0}
+    .calc{display:grid;grid-template-columns:1.4fr 1fr}
+    .calc-out{border-top:0;border-left:1px solid var(--line);display:flex;flex-direction:column;justify-content:flex-end}
+    .fgrid{grid-template-columns:2fr 1fr 1fr 1fr}
   }
-  @media (min-width:960px){
+  @media (min-width:1000px){
     body{padding-bottom:0}
-    .bar{display:none}
-    section{padding:88px 0}
-    h2{font-size:38px}
-    .nav,.head-phone{display:flex}
-    .burger,.mobile-menu{display:none}
-    .hero{padding:56px 0 80px}
-    .hero-grid{grid-template-columns:1.05fr 1fr;align-items:center;gap:48px}
-    .hero h1{font-size:50px}
-    .cards{grid-template-columns:repeat(4,1fr)}
-    .benefit{flex-direction:column}
-    .aud-wrap{display:grid;grid-template-columns:1fr 1.3fr;gap:40px;align-items:start}
-    .tabs{flex-direction:column;margin:22px 0 0;padding:0}
-    .tab{text-align:left;padding:16px 20px;border-radius:14px}
-    .aud-panel{margin-top:22px;padding:32px}
-    .calc{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;padding:36px}
-    .calc>p,.calc>h3{grid-column:1/-1}
-    .calc-side{display:flex;flex-direction:column;justify-content:flex-end}
-    .review{flex-basis:32%}
-    .works{grid-template-columns:repeat(3,1fr)}
-    .proc-wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px}
-    .guar{padding:48px}
-    .guar-list{grid-template-columns:repeat(4,1fr)}
-    .contact-grid{grid-template-columns:1fr 1fr;gap:28px}
-    .form{padding:32px}
-    .f-grid{grid-template-columns:2fr 1fr 1fr 1fr}
-  }
-
-  /* =========================================================
-     СТРОГИЙ СЛОЙ: меньше скруглений, жёлтый — только акцент
-     ========================================================= */
-  :root{--cream:#F7F5F0;--yellow-soft:#FFF3CC;--line:#E6E1D6;--radius:6px;--muted:#5F594E}
-  body{font-size:16px}
-  h2{font-size:28px;letter-spacing:-.03em}
-  section{padding:64px 0}
-  .eyebrow{font-size:11.5px;letter-spacing:.16em;color:var(--ink);margin-bottom:14px}
-  .eyebrow::before{width:24px;height:2px;border-radius:0;background:var(--yellow-deep)}
-  .lead{font-size:16px}
-
-  .btn{border-radius:4px;min-height:52px;font-size:15px;letter-spacing:.01em}
-  .btn-yellow{box-shadow:none}
-  .btn-ghost{border:1px solid var(--ink)}
-  .logo-mark{border-radius:4px}
-  .burger{border-radius:4px;border-color:var(--line)}
-  header{background:rgba(255,255,255,.97)}
-
-  /* hero */
-  .hero{background:var(--white);padding:32px 0 56px}
-  .hero h1{font-size:34px;letter-spacing:-.035em}
-  .hero-art{border-radius:var(--radius)}
-  .hero-art::after{display:none}
-  .hero-badge{border-radius:0;left:0;bottom:0;padding:14px 18px;border-left:4px solid var(--yellow);box-shadow:none}
-  .hero-points{gap:6px 18px;margin-top:22px}
-  .chip{background:none;border:0;padding:0;border-radius:0;font-size:14px;font-weight:600;color:var(--muted);display:inline-flex;align-items:center;gap:8px}
-  .chip::before{content:"";width:6px;height:6px;background:var(--yellow-deep)}
-
-  /* benefits — нумерованный список с линиями */
-  .cards{counter-reset:b;gap:0;margin-top:30px}
-  .card{border-radius:var(--radius);box-shadow:none}
-  .benefit{border:0;border-top:1px solid var(--line);border-radius:0;padding:20px 0;gap:18px}
-  .benefit .ico{display:none}
-  .benefit::before{counter-increment:b;content:"0" counter(b);flex:none;width:32px;font-weight:800;font-size:14px;color:var(--yellow-deep);padding-top:2px}
-  .benefit h3{font-size:17px}
-
-  /* audience — вкладки-подчёркивания */
-  .tabs{gap:22px;border-bottom:1px solid var(--line);padding-bottom:0}
-  .tab{border:0;border-bottom:2px solid transparent;border-radius:0;background:none;padding:12px 0;color:var(--muted);margin-bottom:-1px}
-  .tab[aria-selected="true"]{background:none;color:var(--ink);border-color:var(--yellow-deep)}
-  .aud-panel{background:var(--white);border:1px solid var(--line);border-radius:var(--radius)}
-  .aud-panel li::before{border-radius:2px;width:18px;height:18px;background-size:14px}
-  .aud-tag{background:var(--cream);border-radius:2px;text-transform:uppercase;letter-spacing:.08em;font-size:11px}
-
-  /* catalog */
-  .prod{border-radius:var(--radius)}
-  .prod-body h3{font-size:15px}
-  .price-note{border-radius:var(--radius);background:none;border-left:3px solid var(--yellow);padding:4px 0 4px 14px}
-  .price-note svg{display:none}
-  .calc{border-radius:var(--radius)}
-  .seg label{border-radius:4px}
-  .num{border-radius:4px}
-  .calc-res{border-radius:4px}
-
-  /* trust */
-  .photo-wide,.photo-tall{border-radius:var(--radius)}
-  .stats{gap:0 16px}
-  .stat{background:none;border-top:2px solid var(--ink);border-radius:0;padding:16px 0 20px}
-  .review{border-radius:var(--radius)}
-  .stars{color:var(--ink);font-size:13px;letter-spacing:3px}
-  .ava{border-radius:4px;background:var(--cream);font-size:15px}
-
-  /* portfolio, process */
-  .work{border-radius:var(--radius)}
-  .step::before{border-radius:4px;font-size:15px;background:var(--ink);color:var(--yellow)}
-  .pay .card{border-radius:var(--radius)}
-
-  /* guarantees — без сплошной жёлтой заливки */
-  .guar{background:var(--white);border:1px solid var(--line);border-top:4px solid var(--yellow);border-radius:var(--radius);padding:28px 22px}
-  .guar .eyebrow::before{background:var(--yellow-deep)}
-  .guar-list{gap:0}
-  .g{border-radius:0;padding:16px 0;border-top:1px solid var(--line)}
-  details{border-radius:var(--radius)}
-  summary::after{background:none;width:auto;height:auto;font-weight:400;font-size:22px;color:var(--muted)}
-
-  /* contacts */
-  .c-item{border-radius:var(--radius)}
-  .c-item .ico{border-radius:4px;background:var(--cream)}
-  .map,.form{border-radius:var(--radius)}
-  .inp{border-radius:4px;border-width:1px}
-  .bar .call{border-radius:4px;background:var(--cream)}
-
-  @media (min-width:640px){
-    .cards{gap:0 28px}
-    .guar-list{gap:0 28px}
-  }
-  @media (min-width:960px){
-    section{padding:96px 0}
+    .bar,.burger,.menu{display:none}
+    .nav,.phone{display:flex}
+    section{padding:104px 0}
     h2{font-size:40px}
-    .hero{padding:64px 0 96px}
-    .hero h1{font-size:54px}
-    .cards{gap:0 32px}
-    .benefit{flex-direction:column;gap:10px;padding:24px 0 0}
-    .tabs{flex-direction:column;gap:0;border-bottom:0;border-left:1px solid var(--line)}
-    .tab{text-align:left;padding:14px 20px;border-bottom:0;border-left:2px solid transparent;margin:0 0 0 -1px;border-radius:0}
-    .tab[aria-selected="true"]{border-left-color:var(--yellow-deep)}
-    .stats{gap:0 32px}
-    .guar{padding:48px}
-    .guar-list{gap:0 32px}
+    .sec-head{margin-bottom:52px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end}
+    .sec-head .label{grid-column:1/-1;margin-bottom:-24px}
+    .sec-head p{margin-top:0}
+    .hero{padding:56px 0 104px}
+    .hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+    .hero-img{order:2;margin:0;aspect-ratio:4/4.4}
+    .hero-text{padding-top:0}
+    .hero h1{font-size:56px}
+    .grid4{grid-template-columns:repeat(4,1fr);column-gap:32px}
+    .item{grid-template-columns:1fr;border-bottom:0;padding-top:28px}
+    .item p{grid-column:1}
+    .segs{grid-template-columns:repeat(4,1fr);column-gap:32px}
+    .seg{border-bottom:0}
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+    .about-img{margin:0;aspect-ratio:4/4.2}
+    .works{grid-template-columns:repeat(3,1fr);gap:32px}
+    .proc{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+    .proc-img{margin-top:0;aspect-ratio:4/4.6;position:sticky;top:100px}
+    .guar{grid-template-columns:repeat(4,1fr);column-gap:32px}
+    .g{border-bottom:0}
+    .faq{display:grid;grid-template-columns:1fr 2fr;gap:64px}
+    .contacts{grid-template-columns:1fr 1fr;gap:64px}
+    .form{padding:40px}
+    .calc-in{padding:36px}
+    .calc-out{padding:36px}
   }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </head>
 <body>
 
-<!-- ===== SVG-спрайт: текстура дерева и иконки ===== -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <pattern id="grain" width="120" height="40" patternUnits="userSpaceOnUse">
-      <path d="M0 8 C30 4 60 12 120 7 M0 20 C40 16 70 25 120 19 M0 32 C35 29 80 36 120 31" fill="none" stroke="#9C6A35" stroke-opacity=".35" stroke-width="1.2"/>
-    </pattern>
-  </defs>
-  <symbol id="i-ruler" viewBox="0 0 24 24"><path d="M3 17L17 3l4 4L7 21z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M7 13l2 2M10 10l2 2M13 7l2 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
-  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19C5 10 11 4 20 4c0 9-6 15-15 15z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M5 19l8-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
-  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
-  <symbol id="i-factory" viewBox="0 0 24 24"><path d="M3 20V10l5 3V10l5 3V6l8 4v10z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
-  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.5 3.5h3l1.5 4-2 1.3a11 11 0 0 0 6.2 6.2l1.3-2 4 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 4.5 5.5a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
-  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
-  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
-  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 11v5M12 8v.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
-  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-  <symbol id="i-tg" viewBox="0 0 24 24"><path d="M21 4L3 11l6 2 2 6 3-4 5 4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 13l12-9" stroke="currentColor" stroke-width="1.8"/></symbol>
-  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M4 20l1.3-4A8.5 8.5 0 1 1 8.4 19z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-1.8-1.8l.8-1-1-2z" fill="currentColor"/></symbol>
-</svg>
-
 <header>
   <div class="wrap head">
-    <a href="#top" class="logo" aria-label="MELLSTROY — на главную">
-      <span class="logo-mark"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V6l4 5 4-5 4 5 4-5v13" fill="none" stroke="#1E1B16" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></svg></span>
-      MELLSTROY
-    </a>
+    <a href="#top" class="logo" aria-label="MELLSTROY — на главную"><i></i>MELLSTROY</a>
     <nav class="nav" aria-label="Основное меню">
-      <a href="#catalog">Каталог и цены</a>
+      <a href="#catalog">Продукция и цены</a>
+      <a href="#about">О компании</a>
       <a href="#works">Работы</a>
       <a href="#process">Как заказать</a>
-      <a href="#guarantee">Гарантии</a>
       <a href="#contacts">Контакты</a>
     </nav>
-    <div class="head-right">
-      <a class="head-phone" href="tel:+37499000000">+374 99 000 000</a>
-      <a href="#order" class="btn btn-yellow" style="min-height:44px;padding:0 16px;font-size:14px">Заявка</a>
-      <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false"><span></span></button>
+    <div class="head-r">
+      <a class="phone" href="tel:+37499000000">+374 99 000 000</a>
+      <a href="#order" class="btn btn-primary" style="min-height:40px;padding:0 18px;font-size:14px">Заявка</a>
+      <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><span></span></button>
     </div>
   </div>
 </header>
 
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#catalog">Каталог и цены</a>
+<nav class="menu" id="menu" aria-label="Мобильное меню">
+  <a href="#catalog">Продукция и цены</a>
   <a href="#calc">Калькулятор</a>
-  <a href="#works">Наши работы</a>
+  <a href="#about">О компании</a>
+  <a href="#works">Работы</a>
   <a href="#process">Как заказать</a>
-  <a href="#guarantee">Гарантии</a>
   <a href="#contacts">Контакты</a>
-  <div class="mm-contacts"><b>+374 99 000 000</b>Ежедневно 9:00–19:00, Ереван</div>
-</div>
+  <div class="menu-foot"><a href="tel:+37499000000">+374 99 000 000</a>Ежедневно 9:00–19:00 · Ереван</div>
+</nav>
 
 <main id="top">
 
-<!-- ===== 1. Кто вы и чем занимаетесь ===== -->
+<!-- 1. Кто вы и чем занимаетесь -->
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <span class="eyebrow">Столярное производство · Ереван</span>
-      <h1>Деревянные детали для мебели — точно в&nbsp;размер</h1>
-      <p>Мебельный щит, столешницы, фасады, ножки и декор из массива дуба, бука, ясеня и сосны. Изготовим по вашим размерам за 5–10 дней.</p>
-      <div class="hero-actions">
-        <a href="#calc" class="btn btn-yellow">Рассчитать стоимость</a>
-        <a href="#catalog" class="btn btn-ghost">Смотреть каталог</a>
-      </div>
-      <div class="hero-points">
-        <span class="chip">Опт и розница</span>
-        <span class="chip">Распил от 1 шт.</span>
-        <span class="chip">Доставка по Армении</span>
-      </div>
-    </div>
-    <div class="hero-art">
-      <img src="https://images.unsplash.com/photo-1788296817269-8df0458ab799?auto=format&fit=crop&q=75&w=1000" srcset="https://images.unsplash.com/photo-1788296817269-8df0458ab799?auto=format&fit=crop&q=75&w=600 600w, https://images.unsplash.com/photo-1788296817269-8df0458ab799?auto=format&fit=crop&q=75&w=1000 1000w, https://images.unsplash.com/photo-1788296817269-8df0458ab799?auto=format&fit=crop&q=75&w=1600 1600w" sizes="(min-width:960px) 50vw, 100vw" alt="Столярный цех MELLSTROY" fetchpriority="high" decoding="async">
-      <div class="hero-badge"><b>8+ лет</b>делаем детали для мебели</div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 2. Какую пользу я получу ===== -->
-<section id="benefits">
   <div class="wrap">
-    <span class="eyebrow">Почему это удобно</span>
-    <h2>Вы собираете мебель — <br>мы берём на себя заготовки</h2>
-    <p class="lead">Не нужно искать сухой массив, держать станки и тратить время на распил. Получаете готовые детали, которые сразу идут в сборку.</p>
-    <div class="cards">
-      <div class="card benefit rv"><span class="ico"><svg width="22" height="22"><use href="#i-ruler"/></svg></span><div><h3>Точность ±0,5 мм</h3><p>Режем на ЧПУ: детали встают без подгонки и щелей.</p></div></div>
-      <div class="card benefit rv"><span class="ico"><svg width="22" height="22"><use href="#i-leaf"/></svg></span><div><h3>Сухой массив</h3><p>Влажность 8–10%. Изделия не ведёт и не трескает через полгода.</p></div></div>
-      <div class="card benefit rv"><span class="ico"><svg width="22" height="22"><use href="#i-clock"/></svg></span><div><h3>Срок 5–10 дней</h3><p>Ходовые позиции — со склада за 1–2 дня.</p></div></div>
-      <div class="card benefit rv"><span class="ico"><svg width="22" height="22"><use href="#i-factory"/></svg></span><div><h3>Цена производителя</h3><p>Без посредников. Скидки от объёма для постоянных клиентов.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 3. Мне это подходит? ===== -->
-<section id="for" style="background:var(--cream)">
-  <div class="wrap aud-wrap">
-    <div>
-      <span class="eyebrow">Для кого</span>
-      <h2>Работаем с теми, кто делает мебель</h2>
-      <p class="lead">Выберите, кто вы, — покажем условия именно для вас.</p>
-      <div class="tabs" role="tablist">
-        <button class="tab" role="tab" aria-selected="true" data-t="0">Мебельные цеха</button>
-        <button class="tab" role="tab" aria-selected="false" data-t="1">Мастера и столяры</button>
-        <button class="tab" role="tab" aria-selected="false" data-t="2">Дизайнеры</button>
-        <button class="tab" role="tab" aria-selected="false" data-t="3">Частным клиентам</button>
+    <div class="hero-img"><img src="https://images.unsplash.com/photo-1788296817269-8df0458ab799?auto=format&fit=crop&q=75&w=1000" srcset="https://images.unsplash.com/photo-1788296817269-8df0458ab799?auto=format&fit=crop&q=75&w=600 600w, https://images.unsplash.com/photo-1788296817269-8df0458ab799?auto=format&fit=crop&q=75&w=1000 1000w, https://images.unsplash.com/photo-1788296817269-8df0458ab799?auto=format&fit=crop&q=75&w=1600 1600w" sizes="(min-width:1000px) 50vw, 100vw" alt="Столярный цех MELLSTROY" fetchpriority="high" decoding="async"></div>
+    <div class="hero-text">
+      <div class="label">Столярное производство · Ереван</div>
+      <h1>Деревянные изделия для мебели по вашим размерам</h1>
+      <p>Мебельный щит, столешницы, фасады, ножки и балясины из массива дуба, бука, ясеня и сосны. Для мебельных цехов, мастеров и частных заказчиков.</p>
+      <div class="actions">
+        <a href="#calc" class="btn btn-primary">Рассчитать стоимость</a>
+        <a href="#catalog" class="btn btn-line">Продукция и цены</a>
+      </div>
+      <div class="facts">
+        <div><b>8 лет</b><span>на рынке</span></div>
+        <div><b>5–10 дней</b><span>срок изготовления</span></div>
+        <div><b>от 1 шт.</b><span>опт и розница</span></div>
       </div>
     </div>
-    <div class="aud-panel" id="audPanel" role="tabpanel" aria-live="polite"></div>
   </div>
 </section>
 
-<!-- ===== 4. Сколько стоит ===== -->
-<section id="catalog">
+<!-- 2. Польза -->
+<section id="benefits" class="surface">
   <div class="wrap">
-    <span class="eyebrow">Каталог и цены</span>
-    <h2>Цены открыто — без «узнайте у менеджера»</h2>
-    <p class="lead">Указаны базовые цены за сосну. Итог зависит от породы, размеров, толщины и обработки — посчитайте в калькуляторе ниже.</p>
+    <div class="sec-head">
+      <div class="label"><b>01</b> Преимущества</div>
+      <h2>Готовые детали, которые сразу идут в сборку</h2>
+      <p>Вам не нужно искать сухой массив, держать станки и тратить время на распил — это наша работа.</p>
+    </div>
+    <div class="grid4">
+      <div class="item"><span class="n">01</span><h3>Точность ±0,5 мм</h3><p>Раскрой на ЧПУ. Детали встают на место без подгонки.</p></div>
+      <div class="item"><span class="n">02</span><h3>Камерная сушка</h3><p>Влажность 8–10%. Изделия не ведёт и не трескается со временем.</p></div>
+      <div class="item"><span class="n">03</span><h3>Сроки по договору</h3><p>5–10 рабочих дней. Ходовые позиции — со склада за 1–2 дня.</p></div>
+      <div class="item"><span class="n">04</span><h3>Цена производителя</h3><p>Без посредников. Скидки от объёма для постоянных клиентов.</p></div>
+    </div>
+  </div>
+</section>
 
+<!-- 3. Подходит ли мне -->
+<section id="for">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="label"><b>02</b> Для кого</div>
+      <h2>Работаем с бизнесом и частными заказчиками</h2>
+      <p>Условия зависят от объёма и задачи. Найдите себя — и запросите предложение.</p>
+    </div>
+    <div class="segs">
+      <div class="seg"><small>B2B · опт</small><h3>Мебельные цеха и фабрики</h3><ul><li>Фиксированные цены и отсрочка платежа</li><li>Поставки по графику, резерв материала</li><li>Договор, работа с НДС</li></ul><a href="#order" class="link">Запросить оптовый прайс</a></div>
+      <div class="seg"><small>B2B · мелкий опт</small><h3>Столяры и мастерские</h3><ul><li>Заказ от одной детали</li><li>Распил по вашей карте раскроя</li><li>Скидка 7% со второго заказа</li></ul><a href="#order" class="link">Узнать цену</a></div>
+      <div class="seg"><small>Проекты</small><h3>Дизайнеры и архитекторы</h3><ul><li>Изготовление по эскизам и 3D-моделям</li><li>Образцы пород и покрытий за 2 дня</li><li>Партнёрское вознаграждение</li></ul><a href="#order" class="link">Обсудить проект</a></div>
+      <div class="seg"><small>Частным клиентам</small><h3>Для дома</h3><ul><li>Столешница, полка, подоконник в размер</li><li>Поможем выбрать породу и покрытие</li><li>Доставка и подъём на этаж</li></ul><a href="#order" class="link">Подобрать изделие</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Цены -->
+<section id="catalog" class="surface">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="label"><b>03</b> Продукция и цены</div>
+      <h2>Открытые цены на всю продукцию</h2>
+      <p>Указаны базовые цены за сосну. Итоговая стоимость зависит от породы, размеров и обработки.</p>
+    </div>
     <div class="cat">
-      <article class="prod rv">
-        <div class="prod-img"><img src="https://images.unsplash.com/photo-1590635022668-81cc8696a19d?auto=format&fit=crop&q=75&w=600" srcset="https://images.unsplash.com/photo-1590635022668-81cc8696a19d?auto=format&fit=crop&q=75&w=300 300w, https://images.unsplash.com/photo-1590635022668-81cc8696a19d?auto=format&fit=crop&q=75&w=600 600w, https://images.unsplash.com/photo-1590635022668-81cc8696a19d?auto=format&fit=crop&q=75&w=900 900w" sizes="(min-width:640px) 33vw, 50vw" alt="Мебельный щит из массива" loading="lazy" decoding="async"></div>
-        <div class="prod-body"><h3>Мебельный щит</h3><small>18–40 мм, цельноламельный и сращённый</small><div class="price">от 14 000 ֏ <span>/ м²</span></div></div>
-      </article>
-      <article class="prod rv">
-        <div class="prod-img"><img src="https://images.unsplash.com/photo-1786462543690-71b19c0d5321?auto=format&fit=crop&q=75&w=600" srcset="https://images.unsplash.com/photo-1786462543690-71b19c0d5321?auto=format&fit=crop&q=75&w=300 300w, https://images.unsplash.com/photo-1786462543690-71b19c0d5321?auto=format&fit=crop&q=75&w=600 600w, https://images.unsplash.com/photo-1786462543690-71b19c0d5321?auto=format&fit=crop&q=75&w=900 900w" sizes="(min-width:640px) 33vw, 50vw" alt="Деревянная столешница" loading="lazy" decoding="async"></div>
-        <div class="prod-body"><h3>Столешницы</h3><small>40 мм, кромка и пропитка маслом</small><div class="price">от 29 000 ֏ <span>/ м²</span></div></div>
-      </article>
-      <article class="prod rv">
-        <div class="prod-img"><img src="https://images.unsplash.com/photo-1693892985308-44965a6060d1?auto=format&fit=crop&q=75&w=600" srcset="https://images.unsplash.com/photo-1693892985308-44965a6060d1?auto=format&fit=crop&q=75&w=300 300w, https://images.unsplash.com/photo-1693892985308-44965a6060d1?auto=format&fit=crop&q=75&w=600 600w, https://images.unsplash.com/photo-1693892985308-44965a6060d1?auto=format&fit=crop&q=75&w=900 900w" sizes="(min-width:640px) 33vw, 50vw" alt="Деревянный фасад" loading="lazy" decoding="async"></div>
-        <div class="prod-body"><h3>Фасады</h3><small>Рамочные и филёнчатые, под покраску</small><div class="price">от 22 000 ֏ <span>/ м²</span></div></div>
-      </article>
-      <article class="prod rv">
-        <div class="prod-img"><img src="https://images.unsplash.com/photo-1772761482020-3cea792b5de7?auto=format&fit=crop&q=75&w=600" srcset="https://images.unsplash.com/photo-1772761482020-3cea792b5de7?auto=format&fit=crop&q=75&w=300 300w, https://images.unsplash.com/photo-1772761482020-3cea792b5de7?auto=format&fit=crop&q=75&w=600 600w, https://images.unsplash.com/photo-1772761482020-3cea792b5de7?auto=format&fit=crop&q=75&w=900 900w" sizes="(min-width:640px) 33vw, 50vw" alt="Точёные ножки стола" loading="lazy" decoding="async"></div>
-        <div class="prod-body"><h3>Ножки и опоры</h3><small>Точёные, прямые, конусные</small><div class="price">от 2 500 ֏ <span>/ шт.</span></div></div>
-      </article>
-      <article class="prod rv">
-        <div class="prod-img"><img src="https://images.unsplash.com/photo-1683491361682-2248dbd3fb92?auto=format&fit=crop&q=75&w=600" srcset="https://images.unsplash.com/photo-1683491361682-2248dbd3fb92?auto=format&fit=crop&q=75&w=300 300w, https://images.unsplash.com/photo-1683491361682-2248dbd3fb92?auto=format&fit=crop&q=75&w=600 600w, https://images.unsplash.com/photo-1683491361682-2248dbd3fb92?auto=format&fit=crop&q=75&w=900 900w" sizes="(min-width:640px) 33vw, 50vw" alt="Точёные балясины" loading="lazy" decoding="async"></div>
-        <div class="prod-body"><h3>Балясины</h3><small>Для лестниц, перил и декора</small><div class="price">от 3 200 ֏ <span>/ шт.</span></div></div>
-      </article>
-      <article class="prod rv">
-        <div class="prod-img"><img src="https://images.unsplash.com/photo-1497219055242-93359eeed651?auto=format&fit=crop&q=75&w=600" srcset="https://images.unsplash.com/photo-1497219055242-93359eeed651?auto=format&fit=crop&q=75&w=300 300w, https://images.unsplash.com/photo-1497219055242-93359eeed651?auto=format&fit=crop&q=75&w=600 600w, https://images.unsplash.com/photo-1497219055242-93359eeed651?auto=format&fit=crop&q=75&w=900 900w" sizes="(min-width:640px) 33vw, 50vw" alt="Резьба по дереву" loading="lazy" decoding="async"></div>
-        <div class="prod-body"><h3>Декор и резьба</h3><small>Накладки, карнизы, молдинги</small><div class="price">от 1 800 ֏ <span>/ п. м</span></div></div>
-      </article>
+      <article class="prod"><div class="prod-img"><img src="https://images.unsplash.com/photo-1590635022668-81cc8696a19d?auto=format&fit=crop&q=75&w=700" srcset="https://images.unsplash.com/photo-1590635022668-81cc8696a19d?auto=format&fit=crop&q=75&w=400 400w, https://images.unsplash.com/photo-1590635022668-81cc8696a19d?auto=format&fit=crop&q=75&w=700 700w, https://images.unsplash.com/photo-1590635022668-81cc8696a19d?auto=format&fit=crop&q=75&w=1000 1000w" sizes="(min-width:1000px) 33vw, (min-width:700px) 33vw, 50vw" alt="Мебельный щит из массива" loading="lazy" decoding="async"></div><h3>Мебельный щит</h3><p>18–40 мм, цельноламельный и сращённый</p><div class="price">от 14 000 ֏ <span>/ м²</span></div></article>
+      <article class="prod"><div class="prod-img"><img src="https://images.unsplash.com/photo-1786462543690-71b19c0d5321?auto=format&fit=crop&q=75&w=700" srcset="https://images.unsplash.com/photo-1786462543690-71b19c0d5321?auto=format&fit=crop&q=75&w=400 400w, https://images.unsplash.com/photo-1786462543690-71b19c0d5321?auto=format&fit=crop&q=75&w=700 700w, https://images.unsplash.com/photo-1786462543690-71b19c0d5321?auto=format&fit=crop&q=75&w=1000 1000w" sizes="(min-width:1000px) 33vw, (min-width:700px) 33vw, 50vw" alt="Столешница из массива" loading="lazy" decoding="async"></div><h3>Столешницы</h3><p>40 мм, кромка, пропитка маслом</p><div class="price">от 29 000 ֏ <span>/ м²</span></div></article>
+      <article class="prod"><div class="prod-img"><img src="https://images.unsplash.com/photo-1693892985308-44965a6060d1?auto=format&fit=crop&q=75&w=700" srcset="https://images.unsplash.com/photo-1693892985308-44965a6060d1?auto=format&fit=crop&q=75&w=400 400w, https://images.unsplash.com/photo-1693892985308-44965a6060d1?auto=format&fit=crop&q=75&w=700 700w, https://images.unsplash.com/photo-1693892985308-44965a6060d1?auto=format&fit=crop&q=75&w=1000 1000w" sizes="(min-width:1000px) 33vw, (min-width:700px) 33vw, 50vw" alt="Мебельный фасад из дерева" loading="lazy" decoding="async"></div><h3>Фасады</h3><p>Рамочные и филёнчатые, под покраску</p><div class="price">от 22 000 ֏ <span>/ м²</span></div></article>
+      <article class="prod"><div class="prod-img"><img src="https://images.unsplash.com/photo-1772761482020-3cea792b5de7?auto=format&fit=crop&q=75&w=700" srcset="https://images.unsplash.com/photo-1772761482020-3cea792b5de7?auto=format&fit=crop&q=75&w=400 400w, https://images.unsplash.com/photo-1772761482020-3cea792b5de7?auto=format&fit=crop&q=75&w=700 700w, https://images.unsplash.com/photo-1772761482020-3cea792b5de7?auto=format&fit=crop&q=75&w=1000 1000w" sizes="(min-width:1000px) 33vw, (min-width:700px) 33vw, 50vw" alt="Точёные ножки стола" loading="lazy" decoding="async"></div><h3>Ножки и опоры</h3><p>Точёные, прямые, конусные</p><div class="price">от 2 500 ֏ <span>/ шт.</span></div></article>
+      <article class="prod"><div class="prod-img"><img src="https://images.unsplash.com/photo-1683491361682-2248dbd3fb92?auto=format&fit=crop&q=75&w=700" srcset="https://images.unsplash.com/photo-1683491361682-2248dbd3fb92?auto=format&fit=crop&q=75&w=400 400w, https://images.unsplash.com/photo-1683491361682-2248dbd3fb92?auto=format&fit=crop&q=75&w=700 700w, https://images.unsplash.com/photo-1683491361682-2248dbd3fb92?auto=format&fit=crop&q=75&w=1000 1000w" sizes="(min-width:1000px) 33vw, (min-width:700px) 33vw, 50vw" alt="Деревянные балясины" loading="lazy" decoding="async"></div><h3>Балясины</h3><p>Для лестниц и ограждений</p><div class="price">от 3 200 ֏ <span>/ шт.</span></div></article>
+      <article class="prod"><div class="prod-img"><img src="https://images.unsplash.com/photo-1497219055242-93359eeed651?auto=format&fit=crop&q=75&w=700" srcset="https://images.unsplash.com/photo-1497219055242-93359eeed651?auto=format&fit=crop&q=75&w=400 400w, https://images.unsplash.com/photo-1497219055242-93359eeed651?auto=format&fit=crop&q=75&w=700 700w, https://images.unsplash.com/photo-1497219055242-93359eeed651?auto=format&fit=crop&q=75&w=1000 1000w" sizes="(min-width:1000px) 33vw, (min-width:700px) 33vw, 50vw" alt="Резной декор из дерева" loading="lazy" decoding="async"></div><h3>Декор и резьба</h3><p>Накладки, карнизы, молдинги</p><div class="price">от 1 800 ֏ <span>/ п. м</span></div></article>
     </div>
+    <p class="note"><b>Из чего складывается цена:</b> порода древесины, толщина и размер, тип ламели, обработка (фрезеровка, шлифовка, масло или лак), объём и срочность заказа. Прайс-лист для оптовых клиентов — по запросу.</p>
 
-    <div class="price-note"><svg width="20" height="20" style="flex:none;margin-top:2px"><use href="#i-info"/></svg><span>От чего зависит цена: порода дерева, толщина и размер, тип ламели (цельная дешевле сращённой), обработка (фрезеровка, шлифовка, масло/лак), срочность и объём заказа. Прайс для оптовиков — по запросу в мессенджер.</span></div>
-
-    <!-- калькулятор -->
     <div class="calc" id="calc">
-      <h3>Калькулятор стоимости</h3>
-      <p>Ориентировочный расчёт за 10 секунд. Точную цену подтвердим после проверки размеров.</p>
+      <div class="calc-in">
+        <h3>Калькулятор стоимости</h3>
+        <p>Предварительный расчёт. Точную цену подтвердим после проверки размеров.</p>
+        <div class="two">
+          <div class="f"><label for="cP">Изделие</label><select class="ctl" id="cP"><option value="shield">Мебельный щит</option><option value="top">Столешница</option><option value="facade">Фасад</option></select></div>
+          <div class="f"><label for="cWd">Порода</label><select class="ctl" id="cWd"><option value="1">Сосна</option><option value="1.6">Бук</option><option value="1.9">Ясень</option><option value="2.2">Дуб</option></select></div>
+        </div>
+        <div class="two">
+          <div class="f"><label for="cL">Длина, см</label><input class="ctl" id="cL" type="number" inputmode="numeric" min="10" max="400" value="120"></div>
+          <div class="f"><label for="cW">Ширина, см</label><input class="ctl" id="cW" type="number" inputmode="numeric" min="10" max="120" value="60"></div>
+        </div>
+        <div class="f" style="margin-bottom:0"><label for="cQ">Количество, шт.</label><input class="ctl" id="cQ" type="number" inputmode="numeric" min="1" max="500" value="1"></div>
+      </div>
+      <div class="calc-out" aria-live="polite">
+        <small>Предварительно</small>
+        <div class="sum" id="cSum">—</div>
+        <p id="cMeta"></p>
+        <a href="#order" class="btn btn-primary btn-full" id="cOrder">Заказать по расчёту</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. Доверие -->
+<section id="about">
+  <div class="wrap">
+    <div class="about">
+      <div class="about-img"><img src="https://images.unsplash.com/photo-1631396326838-de37e5f8bcbc?auto=format&fit=crop&q=75&w=1000" srcset="https://images.unsplash.com/photo-1631396326838-de37e5f8bcbc?auto=format&fit=crop&q=75&w=600 600w, https://images.unsplash.com/photo-1631396326838-de37e5f8bcbc?auto=format&fit=crop&q=75&w=1000 1000w, https://images.unsplash.com/photo-1631396326838-de37e5f8bcbc?auto=format&fit=crop&q=75&w=1600 1600w" sizes="(min-width:1000px) 50vw, 100vw" alt="Мастер в цехе MELLSTROY" loading="lazy" decoding="async"></div>
       <div>
-        <div class="field"><label>Изделие</label>
-          <div class="seg" id="cProduct">
-            <input type="radio" name="p" id="p1" value="shield" checked><label for="p1">Щит</label>
-            <input type="radio" name="p" id="p2" value="top"><label for="p2">Столешница</label>
-            <input type="radio" name="p" id="p3" value="facade"><label for="p3">Фасад</label>
-          </div>
-        </div>
-        <div class="field"><label>Порода</label>
-          <div class="seg" id="cWood">
-            <input type="radio" name="w" id="w1" value="1" checked><label for="w1">Сосна</label>
-            <input type="radio" name="w" id="w2" value="1.6"><label for="w2">Бук</label>
-            <input type="radio" name="w" id="w3" value="1.9"><label for="w3">Ясень</label>
-            <input type="radio" name="w" id="w4" value="2.2"><label for="w4">Дуб</label>
-          </div>
-        </div>
-        <div class="field"><label>Размер, см</label>
-          <div class="row2">
-            <input class="num" id="cL" type="number" inputmode="numeric" min="10" max="400" value="120" aria-label="Длина, см" placeholder="Длина">
-            <input class="num" id="cW" type="number" inputmode="numeric" min="10" max="120" value="60" aria-label="Ширина, см" placeholder="Ширина">
-          </div>
-        </div>
-        <div class="field"><label>Количество, шт.</label>
-          <input class="num" id="cQ" type="number" inputmode="numeric" min="1" max="500" value="1">
-        </div>
-      </div>
-      <div class="calc-side">
-        <div class="calc-res" aria-live="polite">
-          <div style="font-size:13px;font-weight:700">Ориентировочно</div>
-          <div class="sum" id="cSum">—</div>
-          <small id="cMeta"></small>
-        </div>
-        <a href="#order" class="btn btn-yellow btn-block" id="cOrder">Заказать по этому расчёту</a>
+        <div class="label"><b>04</b> О компании</div>
+        <h2>Производство полного цикла в Ереване</h2>
+        <p style="color:var(--muted);margin-top:16px">Сушка, распил, фрезеровка, шлифовка и покрытие выполняются в одном цехе. Мы контролируем качество на каждом этапе и отвечаем за результат по договору.</p>
+        <div class="docs"><span>Сертификаты на древесину</span><span>Договор и закрывающие документы</span><span>Работа с НДС</span></div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ===== 5. Почему доверять ===== -->
-<section id="trust" style="background:var(--cream)">
-  <div class="wrap">
-    <span class="eyebrow">О компании</span>
-    <h2>Цифры, а не обещания</h2>
-    <p class="lead">MELLSTROY — столярное производство в Ереване. Свой цех, сушильная камера и ЧПУ-станки, поэтому отвечаем за качество на каждом этапе.</p>
-    <figure class="photo-wide rv"><img src="https://images.unsplash.com/photo-1631396326838-de37e5f8bcbc?auto=format&fit=crop&q=75&w=1000" srcset="https://images.unsplash.com/photo-1631396326838-de37e5f8bcbc?auto=format&fit=crop&q=75&w=600 600w, https://images.unsplash.com/photo-1631396326838-de37e5f8bcbc?auto=format&fit=crop&q=75&w=1000 1000w, https://images.unsplash.com/photo-1631396326838-de37e5f8bcbc?auto=format&fit=crop&q=75&w=1600 1600w" sizes="(min-width:960px) 1080px, 100vw" alt="Мастер MELLSTROY за работой" loading="lazy" decoding="async"><figcaption>Собственный цех в Ереване: сушка, распил, фрезеровка и шлифовка — в одном месте</figcaption></figure>
     <div class="stats">
-      <div class="stat rv"><b>8 лет</b><span>на рынке</span></div>
-      <div class="stat rv"><b>2 400+</b><span>выполненных заказов</span></div>
-      <div class="stat rv"><b>60+</b><span>цехов работают с нами постоянно</span></div>
-      <div class="stat rv"><b>1 200 м²</b><span>собственный цех</span></div>
+      <div class="stat"><b>8 лет</b><span>на рынке</span></div>
+      <div class="stat"><b>2 400+</b><span>выполненных заказов</span></div>
+      <div class="stat"><b>60+</b><span>постоянных партнёров</span></div>
+      <div class="stat"><b>1 200 м²</b><span>производственная площадь</span></div>
     </div>
 
-    <div class="reviews" aria-label="Отзывы клиентов">
-      <div class="review"><div class="stars">★★★★★</div><p>Заказываем щит из бука каждый месяц. За два года — ни одной кривой партии, всё строго по размерам.</p><div class="who"><span class="ava">А</span><div><b>Арман Г.</b><small>Мебельный цех, Ереван</small></div></div></div>
-      <div class="review"><div class="stars">★★★★★</div><p>Сделали дубовую столешницу на кухню 3,2 м. Привезли, помогли занести, по поверхности ни одного дефекта.</p><div class="who"><span class="ava">М</span><div><b>Мариам С.</b><small>Частный клиент</small></div></div></div>
-      <div class="review"><div class="stars">★★★★★</div><p>Для проекта нужны были нестандартные фасады с фрезеровкой. Ребята сделали образец за 2 дня, утвердили — и запустили партию.</p><div class="who"><span class="ava">Д</span><div><b>Давид К.</b><small>Дизайнер интерьеров</small></div></div></div>
+    <div class="sec-head" style="margin:88px 0 32px">
+      <div class="label"><b>05</b> Отзывы</div>
+      <h2>Что говорят клиенты</h2>
     </div>
-
-    <div class="docs">
-      <span class="chip">Сертификаты на древесину</span>
-      <span class="chip">Договор и закрывающие документы</span>
-      <span class="chip">Работаем с НДС</span>
+    <div class="quotes">
+      <div class="quote"><p>Берём буковый щит каждый месяц уже два года. Геометрия стабильная, ни одной партии не пришлось возвращать.</p><div class="who"><b>Арман Г.</b> — мебельный цех, Ереван</div></div>
+      <div class="quote"><p>Заказывали дубовую столешницу 3,2 метра. Привезли в срок, занесли, по поверхности ни одного замечания.</p><div class="who"><b>Мариам С.</b> — частный клиент</div></div>
+      <div class="quote"><p>Сделали образец фасада с фрезеровкой за два дня, после согласования запустили партию. Удобно работать.</p><div class="who"><b>Давид К.</b> — дизайнер интерьеров</div></div>
     </div>
   </div>
 </section>
 
-<!-- ===== 6. Примеры работ ===== -->
-<section id="works">
+<!-- 6. Примеры работ -->
+<section id="works" class="surface">
   <div class="wrap">
-    <span class="eyebrow">Портфолио</span>
-    <h2>Как выглядит результат</h2>
-    <p class="lead">Несколько недавних заказов: задача, решение и сроки.</p>
+    <div class="sec-head">
+      <div class="label"><b>06</b> Работы</div>
+      <h2>Недавние заказы</h2>
+      <p>Задача клиента, наше решение и срок изготовления.</p>
+    </div>
     <div class="works">
-      <article class="work rv">
-        <div class="work-img"><img src="https://images.unsplash.com/photo-1768573488839-843709c717d0?auto=format&fit=crop&q=75&w=800" srcset="https://images.unsplash.com/photo-1768573488839-843709c717d0?auto=format&fit=crop&q=75&w=400 400w, https://images.unsplash.com/photo-1768573488839-843709c717d0?auto=format&fit=crop&q=75&w=800 800w, https://images.unsplash.com/photo-1768573488839-843709c717d0?auto=format&fit=crop&q=75&w=1200 1200w" sizes="(min-width:960px) 33vw, 50vw" alt="Кухня с деревянной столешницей" loading="lazy" decoding="async"></div>
-        <div class="work-body"><h3>Дубовая столешница для кухни</h3><dl><dt>Задача</dt><dd>Цельная столешница 3,2 м под мойку</dd><dt>Решение</dt><dd>Дуб 40 мм, вырез, 3 слоя масла</dd><dt>Срок</dt><dd>7 дней</dd></dl></div>
-      </article>
-      <article class="work rv">
-        <div class="work-img"><img src="https://images.unsplash.com/photo-1769745402932-4c93d9e76d98?auto=format&fit=crop&q=75&w=800" srcset="https://images.unsplash.com/photo-1769745402932-4c93d9e76d98?auto=format&fit=crop&q=75&w=400 400w, https://images.unsplash.com/photo-1769745402932-4c93d9e76d98?auto=format&fit=crop&q=75&w=800 800w, https://images.unsplash.com/photo-1769745402932-4c93d9e76d98?auto=format&fit=crop&q=75&w=1200 1200w" sizes="(min-width:960px) 33vw, 50vw" alt="Кухонные фасады из массива" loading="lazy" decoding="async"></div>
-        <div class="work-body"><h3>Фасады для кухни</h3><dl><dt>Задача</dt><dd>Филёнчатые фасады в классическом стиле</dd><dt>Решение</dt><dd>Массив, фрезеровка по эскизу, тонировка</dd><dt>Срок</dt><dd>9 дней</dd></dl></div>
-      </article>
-      <article class="work rv">
-        <div class="work-img"><img src="https://images.unsplash.com/photo-1611269154421-4e27233ac5c7?auto=format&fit=crop&q=75&w=800" srcset="https://images.unsplash.com/photo-1611269154421-4e27233ac5c7?auto=format&fit=crop&q=75&w=400 400w, https://images.unsplash.com/photo-1611269154421-4e27233ac5c7?auto=format&fit=crop&q=75&w=800 800w, https://images.unsplash.com/photo-1611269154421-4e27233ac5c7?auto=format&fit=crop&q=75&w=1200 1200w" sizes="(min-width:960px) 33vw, 50vw" alt="Обеденный стол из массива" loading="lazy" decoding="async"></div>
-        <div class="work-body"><h3>Детали обеденного стола</h3><dl><dt>Задача</dt><dd>Щит и ножки для партии из 40 столов</dd><dt>Решение</dt><dd>Бук, токарка на ЧПУ, шлифовка</dd><dt>Срок</dt><dd>10 дней</dd></dl></div>
-      </article>
+      <article class="work"><div class="work-img"><img src="https://images.unsplash.com/photo-1768573488839-843709c717d0?auto=format&fit=crop&q=75&w=700" srcset="https://images.unsplash.com/photo-1768573488839-843709c717d0?auto=format&fit=crop&q=75&w=400 400w, https://images.unsplash.com/photo-1768573488839-843709c717d0?auto=format&fit=crop&q=75&w=700 700w, https://images.unsplash.com/photo-1768573488839-843709c717d0?auto=format&fit=crop&q=75&w=1000 1000w" sizes="(min-width:1000px) 33vw, (min-width:700px) 33vw, 50vw" alt="Кухня со столешницей из дуба" loading="lazy" decoding="async"></div><h3>Столешница для кухни</h3><dl><dt>Задача</dt><dd>Цельная столешница 3,2 м с вырезом под мойку</dd><dt>Решение</dt><dd>Дуб 40 мм, три слоя масла</dd><dt>Срок</dt><dd>7 дней</dd></dl></article>
+      <article class="work"><div class="work-img"><img src="https://images.unsplash.com/photo-1769745402932-4c93d9e76d98?auto=format&fit=crop&q=75&w=700" srcset="https://images.unsplash.com/photo-1769745402932-4c93d9e76d98?auto=format&fit=crop&q=75&w=400 400w, https://images.unsplash.com/photo-1769745402932-4c93d9e76d98?auto=format&fit=crop&q=75&w=700 700w, https://images.unsplash.com/photo-1769745402932-4c93d9e76d98?auto=format&fit=crop&q=75&w=1000 1000w" sizes="(min-width:1000px) 33vw, (min-width:700px) 33vw, 50vw" alt="Кухонные фасады из массива" loading="lazy" decoding="async"></div><h3>Фасады для кухни</h3><dl><dt>Задача</dt><dd>Филёнчатые фасады в классическом стиле</dd><dt>Решение</dt><dd>Массив, фрезеровка по эскизу, тонировка</dd><dt>Срок</dt><dd>9 дней</dd></dl></article>
+      <article class="work"><div class="work-img"><img src="https://images.unsplash.com/photo-1611269154421-4e27233ac5c7?auto=format&fit=crop&q=75&w=700" srcset="https://images.unsplash.com/photo-1611269154421-4e27233ac5c7?auto=format&fit=crop&q=75&w=400 400w, https://images.unsplash.com/photo-1611269154421-4e27233ac5c7?auto=format&fit=crop&q=75&w=700 700w, https://images.unsplash.com/photo-1611269154421-4e27233ac5c7?auto=format&fit=crop&q=75&w=1000 1000w" sizes="(min-width:1000px) 33vw, (min-width:700px) 33vw, 50vw" alt="Обеденный стол из массива" loading="lazy" decoding="async"></div><h3>Детали обеденных столов</h3><dl><dt>Задача</dt><dd>Щиты и ножки для партии из 40 столов</dd><dt>Решение</dt><dd>Бук, токарная обработка на ЧПУ</dd><dt>Срок</dt><dd>10 дней</dd></dl></article>
     </div>
   </div>
 </section>
 
-<!-- ===== 7. Как заказать ===== -->
-<section id="process" style="background:var(--cream)">
-  <div class="wrap proc-wrap">
-    <div>
-      <span class="eyebrow">Как мы работаем</span>
-      <h2>4 шага от заявки до получения</h2>
-      <ol class="steps">
-        <li class="step"><h3>Заявка</h3><p>Оставляете заявку на сайте или пишете в мессенджер — с размерами, фото или эскизом.</p></li>
-        <li class="step"><h3>Расчёт за 30 минут</h3><p>Уточняем детали и присылаем точную смету. Можно сделать образец.</p></li>
-        <li class="step"><h3>Предоплата и производство</h3><p>Подписываем договор, вносите 50% — запускаем заказ. Присылаем фото по ходу работы.</p></li>
-        <li class="step"><h3>Доставка и оплата остатка</h3><p>Привозим, вы проверяете изделия и оплачиваете оставшиеся 50%.</p></li>
-      </ol>
-    </div>
-    <div class="pay">
-      <div class="photo-tall"><img src="https://images.unsplash.com/photo-1615974679600-665fb9468c4f?auto=format&fit=crop&q=75&w=800" srcset="https://images.unsplash.com/photo-1615974679600-665fb9468c4f?auto=format&fit=crop&q=75&w=400 400w, https://images.unsplash.com/photo-1615974679600-665fb9468c4f?auto=format&fit=crop&q=75&w=800 800w, https://images.unsplash.com/photo-1615974679600-665fb9468c4f?auto=format&fit=crop&q=75&w=1200 1200w" sizes="(min-width:960px) 50vw, 100vw" alt="Замер детали рулеткой" loading="lazy" decoding="async"></div>
-      <div class="card"><h3>Оплата</h3><p>Наличными, картой, переводом или по счёту для юрлиц. Предоплата 50%, остаток — при получении.</p></div>
-      <div class="card"><h3>Доставка</h3><p>По Еревану — в течение дня, от 3 000 ֏. Бесплатно при заказе от 300 000 ֏. По Армении — транспортной компанией.</p></div>
-      <div class="card"><h3>Самовывоз</h3><p>Со склада в Ереване, ежедневно 9:00–19:00. Поможем загрузить.</p></div>
-      <div class="card"><h3>Нет чертежа?</h3><p>Приедем на замер или подскажем по фото, какие размеры нужны.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 8. Гарантии ===== -->
-<section id="guarantee">
+<!-- 7. Как заказать -->
+<section id="process">
   <div class="wrap">
+    <div class="proc">
+      <div>
+        <div class="label"><b>07</b> Как заказать</div>
+        <h2 style="margin-bottom:36px">Четыре шага от заявки до получения</h2>
+        <ol class="steps">
+          <li><h3>Заявка</h3><p>Оставьте заявку или напишите в мессенджер — с размерами, фото или чертежом.</p></li>
+          <li><h3>Расчёт</h3><p>В течение 30 минут присылаем смету. При необходимости делаем образец.</p></li>
+          <li><h3>Договор и производство</h3><p>Предоплата 50%. Во время работы отправляем фото изделий.</p></li>
+          <li><h3>Доставка и приёмка</h3><p>Вы проверяете изделия и оплачиваете оставшиеся 50%.</p></li>
+        </ol>
+        <div class="terms">
+          <div><h3>Оплата</h3><p>Наличные, карта, перевод или счёт для юридических лиц.</p></div>
+          <div><h3>Доставка</h3><p>По Еревану — от 3 000 ֏, бесплатно от 300 000 ֏. По Армении — транспортной компанией.</p></div>
+          <div><h3>Самовывоз</h3><p>Со склада в Ереване ежедневно с 9:00 до 19:00.</p></div>
+        </div>
+      </div>
+      <div class="proc-img"><img src="https://images.unsplash.com/photo-1615974679600-665fb9468c4f?auto=format&fit=crop&q=75&w=1000" srcset="https://images.unsplash.com/photo-1615974679600-665fb9468c4f?auto=format&fit=crop&q=75&w=600 600w, https://images.unsplash.com/photo-1615974679600-665fb9468c4f?auto=format&fit=crop&q=75&w=1000 1000w, https://images.unsplash.com/photo-1615974679600-665fb9468c4f?auto=format&fit=crop&q=75&w=1600 1600w" sizes="(min-width:1000px) 50vw, 100vw" alt="Замер детали перед изготовлением" loading="lazy" decoding="async"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. Гарантии -->
+<section id="guarantee" class="surface">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="label"><b>08</b> Гарантии</div>
+      <h2>Обязательства, закреплённые в договоре</h2>
+    </div>
     <div class="guar">
-      <span class="eyebrow">Гарантии</span>
-      <h2>Если что-то пойдёт не так — исправим за свой счёт</h2>
-      <div class="guar-list">
-        <div class="g"><h3>Гарантия 12 месяцев</h3><p>На геометрию и клеевые швы. Повело или треснуло — заменим.</p></div>
-        <div class="g"><h3>Брак — переделаем</h3><p>Нашли дефект при приёмке? Переделаем бесплатно в течение 5 дней.</p></div>
-        <div class="g"><h3>Сроки в договоре</h3><p>Задержали по нашей вине — скидка 1% за каждый день.</p></div>
-        <div class="g"><h3>Возврат</h3><p>Стандартные позиции со склада можно вернуть в течение 14 дней.</p></div>
-      </div>
+      <div class="g"><h3>Гарантия 12 месяцев</h3><p>На геометрию и клеевые швы. При деформации или трещине — замена.</p></div>
+      <div class="g"><h3>Устранение брака</h3><p>Дефект, найденный при приёмке, исправляем бесплатно в течение 5 дней.</p></div>
+      <div class="g"><h3>Ответственность за сроки</h3><p>При задержке по нашей вине — скидка 1% за каждый день.</p></div>
+      <div class="g"><h3>Возврат</h3><p>Стандартные позиции со склада принимаем обратно в течение 14 дней.</p></div>
     </div>
-
     <div class="faq">
-      <details><summary>Можно заказать одну деталь?</summary><p>Да, работаем от 1 штуки. Для опта действуют скидки от объёма.</p></details>
-      <details><summary>Можно сначала посмотреть образцы?</summary><p>Конечно. Приезжайте в шоурум при цеху или закажите образец породы и обработки.</p></details>
-      <details><summary>Какую влажность имеет древесина?</summary><p>8–10% после камерной сушки. Это норма для мебели в жилых помещениях.</p></details>
+      <h3>Частые вопросы</h3>
+      <div>
+        <details><summary>Можно заказать одну деталь?</summary><p>Да, работаем от одной штуки. Для оптовых заказов действуют скидки от объёма.</p></details>
+        <details><summary>Можно посмотреть образцы до заказа?</summary><p>Да. Приезжайте в шоурум при цехе или закажите образец нужной породы и покрытия.</p></details>
+        <details><summary>Какая влажность у древесины?</summary><p>8–10% после камерной сушки — норма для мебели в жилых помещениях.</p></details>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ===== 9 + 10. Контакты и призыв к действию ===== -->
-<section id="contacts" style="background:var(--cream)">
+<!-- 9 + 10. Контакты и заявка -->
+<section id="contacts">
   <div class="wrap">
-    <span class="eyebrow">Контакты</span>
-    <h2>Остались вопросы? Ответит живой человек</h2>
-    <div class="contact-grid">
-      <div style="display:grid;gap:12px">
-        <div class="c-list">
-          <a class="c-item" href="tel:+37499000000" style="background:var(--white)"><span class="ico"><svg width="22" height="22"><use href="#i-phone"/></svg></span><div><small>Телефон</small><b>+374 99 000 000</b></div></a>
-          <div class="c-item" style="background:var(--white)"><span class="ico"><svg width="22" height="22"><use href="#i-pin"/></svg></span><div><small>Цех и склад</small><b>Ереван, ул. Примерная, 1</b><small>Ежедневно 9:00–19:00</small></div></div>
-          <a class="c-item" href="mailto:info@mellstroy.am" style="background:var(--white)"><span class="ico"><svg width="22" height="22"><use href="#i-mail"/></svg></span><div><small>Почта</small><b>info@mellstroy.am</b></div></a>
+    <div class="contacts">
+      <div>
+        <div class="label"><b>09</b> Контакты</div>
+        <h2 style="margin-bottom:32px">Свяжитесь с нами</h2>
+        <div class="clist">
+          <div class="crow"><span>Телефон</span><a href="tel:+37499000000">+374 99 000 000</a></div>
+          <div class="crow"><span>Почта</span><a href="mailto:info@mellstroy.am">info@mellstroy.am</a></div>
+          <div class="crow"><span>Адрес</span><div>Ереван, ул. Примерная, 1</div></div>
+          <div class="crow"><span>Режим работы</span><div>Ежедневно, 9:00–19:00</div></div>
         </div>
-        <div class="messengers">
-          <a class="btn btn-dark" href="https://t.me/mellstroy" target="_blank" rel="noopener"><svg width="20" height="20"><use href="#i-tg"/></svg>Telegram</a>
-          <a class="btn btn-dark" href="https://wa.me/37499000000" target="_blank" rel="noopener"><svg width="20" height="20"><use href="#i-wa"/></svg>WhatsApp</a>
-        </div>
-        <div class="map" aria-label="Схема проезда">
-          <svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"><rect width="320" height="200" fill="#FFFAEB"/><g stroke="#EFE6CF" stroke-width="14" fill="none" stroke-linecap="round"><path d="M-10 60 L330 40"/><path d="M-10 150 L330 170"/><path d="M90 -10 L120 210"/><path d="M230 -10 L210 210"/></g><g stroke="#fff" stroke-width="2" stroke-dasharray="6 6" fill="none"><path d="M-10 60 L330 40"/><path d="M-10 150 L330 170"/></g><rect x="140" y="80" width="54" height="40" rx="4" fill="#FFF1C2"/><g transform="translate(167 64)"><path d="M0 34s-14-12-14-22a14 14 0 0 1 28 0c0 10-14 22-14 22z" fill="#FFC72C" stroke="#1E1B16" stroke-width="2"/><circle cy="12" r="4.5" fill="#1E1B16"/></g><text x="167" y="138" text-anchor="middle" font-family="Manrope" font-weight="700" font-size="12" fill="#1E1B16">MELLSTROY</text></svg>
+        <div class="msg">
+          <a class="btn btn-line" href="https://wa.me/37499000000" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn-line" href="https://t.me/mellstroy" target="_blank" rel="noopener">Telegram</a>
         </div>
       </div>
-
-      <!-- форма -->
-      <div class="form" id="order" style="background:var(--white);border:1px solid var(--line)">
+      <div class="form" id="order">
         <div id="formBox">
-          <h3>Получите расчёт за 30 минут</h3>
-          <p>Оставьте контакты и опишите, что нужно. Перезвоним в рабочее время.</p>
-          <form id="leadForm" novalidate>
-            <input class="inp" name="name" placeholder="Ваше имя" autocomplete="name" required>
-            <input class="inp" name="phone" type="tel" placeholder="Телефон" autocomplete="tel" inputmode="tel" required>
-            <textarea class="inp" name="msg" id="msg" placeholder="Что нужно изготовить: изделие, порода, размеры, количество"></textarea>
-            <button class="btn btn-yellow btn-block" type="submit">Получить расчёт</button>
+          <h3>Получить расчёт</h3>
+          <p>Опишите задачу — ответим в течение 30 минут в рабочее время.</p>
+          <form id="lead" novalidate>
+            <input class="ctl" name="name" placeholder="Имя" autocomplete="name" required>
+            <input class="ctl" name="phone" type="tel" placeholder="Телефон" autocomplete="tel" inputmode="tel" required>
+            <textarea class="ctl" name="msg" id="msg" placeholder="Изделие, порода, размеры, количество"></textarea>
+            <button class="btn btn-primary btn-full" type="submit">Отправить заявку</button>
             <p class="consent">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
           </form>
         </div>
-        <div class="form-done" id="formDone">
-          <span class="ico"><svg width="28" height="28"><use href="#i-check"/></svg></span>
-          <h3>Заявка готова</h3>
-          <p>Отправьте её нам в один клик — текст уже заполнен.</p>
-          <div class="messengers">
-            <a class="btn btn-dark" id="sendWa" href="#" target="_blank" rel="noopener"><svg width="20" height="20"><use href="#i-wa"/></svg>WhatsApp</a>
-            <a class="btn btn-dark" id="sendTg" href="#" target="_blank" rel="noopener"><svg width="20" height="20"><use href="#i-tg"/></svg>Telegram</a>
+        <div class="done" id="done">
+          <h3>Заявка сформирована</h3>
+          <p>Отправьте её в удобный мессенджер — текст уже заполнен.</p>
+          <div class="msg" style="margin-top:0">
+            <a class="btn btn-primary" id="sendWa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn btn-line" id="sendTg" href="#" target="_blank" rel="noopener">Telegram</a>
           </div>
         </div>
       </div>
@@ -717,104 +539,58 @@
 
 <footer>
   <div class="wrap">
-    <div class="f-grid">
-      <div>
-        <div class="logo"><span class="logo-mark"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V6l4 5 4-5 4 5 4-5v13" fill="none" stroke="#1E1B16" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></svg></span>MELLSTROY</div>
-        <p>Деревянные изделия для мебели от производителя. Ереван.</p>
-      </div>
-      <div><div class="f-title">Продукция</div><a href="#catalog">Мебельный щит</a><a href="#catalog">Столешницы</a><a href="#catalog">Фасады</a><a href="#catalog">Ножки и балясины</a></div>
-      <div><div class="f-title">Клиентам</div><a href="#process">Оплата и доставка</a><a href="#guarantee">Гарантии и возврат</a><a href="#works">Портфолио</a><a href="#calc">Калькулятор</a></div>
-      <div><div class="f-title">Связь</div><a href="tel:+37499000000">+374 99 000 000</a><a href="mailto:info@mellstroy.am">info@mellstroy.am</a><span style="display:block;padding:3px 0">9:00–19:00, без выходных</span></div>
+    <div class="fgrid">
+      <div><div class="logo"><i></i>MELLSTROY</div><p>Деревянные изделия для мебели от производителя. Ереван.</p></div>
+      <div><h4>Продукция</h4><a href="#catalog">Мебельный щит</a><a href="#catalog">Столешницы</a><a href="#catalog">Фасады</a><a href="#catalog">Ножки и балясины</a></div>
+      <div><h4>Клиентам</h4><a href="#process">Оплата и доставка</a><a href="#guarantee">Гарантии</a><a href="#works">Работы</a><a href="#calc">Калькулятор</a></div>
+      <div><h4>Контакты</h4><a href="tel:+37499000000">+374 99 000 000</a><a href="mailto:info@mellstroy.am">info@mellstroy.am</a><span>Ежедневно 9:00–19:00</span></div>
     </div>
-    <div class="copy">© 2026 MELLSTROY. Все права защищены.</div>
+    <div class="copy">© 2026 MELLSTROY</div>
   </div>
 </footer>
 
-<!-- нижняя панель на телефоне -->
 <div class="bar">
-  <a href="tel:+37499000000" class="btn call" aria-label="Позвонить"><svg width="22" height="22"><use href="#i-phone"/></svg></a>
-  <a href="#order" class="btn btn-yellow">Получить расчёт</a>
+  <a href="tel:+37499000000" class="btn btn-line">Позвонить</a>
+  <a href="#order" class="btn btn-primary">Получить расчёт</a>
 </div>
 
 <script>
 (function(){
-  /* ---- меню ---- */
-  var burger=document.getElementById('burger');
-  function toggleMenu(open){
-    document.body.classList.toggle('menu-open',open);
-    burger.setAttribute('aria-expanded',open);
-    document.body.style.overflow=open?'hidden':'';
-  }
-  burger.addEventListener('click',function(){toggleMenu(!document.body.classList.contains('menu-open'))});
-  document.querySelectorAll('#mobileMenu a').forEach(function(a){a.addEventListener('click',function(){toggleMenu(false)})});
+  var b=document.getElementById('burger');
+  function menu(o){document.body.classList.toggle('open',o);b.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':''}
+  b.addEventListener('click',function(){menu(!document.body.classList.contains('open'))});
+  document.querySelectorAll('#menu a').forEach(function(a){a.addEventListener('click',function(){menu(false)})});
 
-  /* ---- для кого ---- */
-  var aud=[
-    {tag:'B2B · опт',t:'Мебельным цехам и фабрикам',l:['Постоянные цены и отсрочка платежа для своих','Поставки по графику, резерв материала под вас','Распил по вашей карте раскроя','Работа по договору, с НДС'],c:'Запросить оптовый прайс'},
-    {tag:'B2B · мелкий опт',t:'Столярам и частным мастерам',l:['Заказ от 1 детали — без минималки','Распил и калибровка, чтобы не держать станки','Ходовые размеры щита всегда на складе','Скидка 7% со второго заказа'],c:'Узнать цену на детали'},
-    {tag:'B2B · проекты',t:'Дизайнерам и архитекторам',l:['Изготовим по вашим эскизам и 3D-моделям','Образцы пород и покрытий за 2 дня','Агентское вознаграждение за клиентов','Фотоотчёт для вашего портфолио'],c:'Обсудить проект'},
-    {tag:'B2C · розница',t:'Для дома и своими руками',l:['Подскажем, какая порода подойдёт под задачу','Столешница, полка или подоконник под ваш размер','Доставка и подъём на этаж','Бюджет — от 10 000 ֏'],c:'Подобрать изделие'}
-  ];
-  var panel=document.getElementById('audPanel');
-  function renderAud(i){
-    var a=aud[i];
-    panel.innerHTML='<span class="aud-tag">'+a.tag+'</span><h3 style="margin-top:12px;font-size:20px">'+a.t+'</h3><ul>'+a.l.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul><a href="#order" class="btn btn-yellow">'+a.c+'</a>';
-  }
-  document.querySelectorAll('.tab').forEach(function(t){
-    t.addEventListener('click',function(){
-      document.querySelectorAll('.tab').forEach(function(x){x.setAttribute('aria-selected','false')});
-      t.setAttribute('aria-selected','true');renderAud(+t.dataset.t);
-    });
-  });
-  renderAud(0);
-
-  /* ---- калькулятор ---- */
   var base={shield:14000,top:29000,facade:22000};
-  var names={shield:'Мебельный щит',top:'Столешница',facade:'Фасад'};
-  var woods={'1':'сосна','1.6':'бук','1.9':'ясень','2.2':'дуб'};
-  var L=document.getElementById('cL'),W=document.getElementById('cW'),Q=document.getElementById('cQ');
-  function val(name){return document.querySelector('input[name="'+name+'"]:checked').value}
-  function fmt(n){return Math.round(n/100)*100+''}
+  var P=document.getElementById('cP'),Wd=document.getElementById('cWd'),L=document.getElementById('cL'),W=document.getElementById('cW'),Q=document.getElementById('cQ');
   function calc(){
     var l=Math.max(0,+L.value||0),w=Math.max(0,+W.value||0),q=Math.max(1,Math.floor(+Q.value||1));
-    var p=val('p'),k=+val('w');
-    var area=(l*w)/10000;
-    var sum=Math.max(area,0.1)*base[p]*k*q;
+    var sum=Math.max(l*w/10000,0.1)*base[P.value]*(+Wd.value)*q;
     if(q>=10)sum*=0.93;
-    var txt=Math.round(sum/100)*100;
-    document.getElementById('cSum').textContent=txt.toLocaleString('ru-RU')+' ֏';
-    document.getElementById('cMeta').textContent=names[p]+', '+woods[val('w')]+', '+l+'×'+w+' см, '+q+' шт.'+(q>=10?' · скидка 7% за объём':'');
-    return names[p]+' ('+woods[val('w')]+'), '+l+'×'+w+' см, '+q+' шт. — ориентировочно '+txt.toLocaleString('ru-RU')+' ֏';
+    var t=(Math.round(sum/100)*100).toLocaleString('ru-RU');
+    var d=P.options[P.selectedIndex].text+', '+Wd.options[Wd.selectedIndex].text.toLowerCase()+', '+l+'×'+w+' см, '+q+' шт.';
+    document.getElementById('cSum').textContent=t+' ֏';
+    document.getElementById('cMeta').textContent=d+(q>=10?' Скидка 7% за объём.':'');
+    return d+' — предварительно '+t+' ֏';
   }
-  document.querySelectorAll('#calc input').forEach(function(i){i.addEventListener('input',calc);i.addEventListener('change',calc)});
+  [P,Wd,L,W,Q].forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc)});
   calc();
-  document.getElementById('cOrder').addEventListener('click',function(){
-    document.getElementById('msg').value='Расчёт с сайта: '+calc();
-  });
+  document.getElementById('cOrder').addEventListener('click',function(){document.getElementById('msg').value='Расчёт с сайта: '+calc()});
 
-  /* ---- форма: собираем заявку и отправляем в мессенджер ---- */
-  document.getElementById('leadForm').addEventListener('submit',function(e){
+  document.getElementById('lead').addEventListener('submit',function(e){
     e.preventDefault();
-    var f=e.target,name=f.name.value.trim(),phone=f.phone.value.trim();
-    var ok=true;
+    var f=e.target,ok=true;
     [f.name,f.phone].forEach(function(el){
       var bad=!el.value.trim()||(el===f.phone&&el.value.replace(/\D/g,'').length<8);
-      el.style.borderColor=bad?'#D9534F':'';
-      if(bad)ok=false;
+      el.style.borderColor=bad?'#C0392B':'';if(bad)ok=false;
     });
     if(!ok)return;
-    var text='Заявка MELLSTROY\nИмя: '+name+'\nТелефон: '+phone+(f.msg.value.trim()?'\nЗадача: '+f.msg.value.trim():'');
-    document.getElementById('sendWa').href='https://wa.me/37499000000?text='+encodeURIComponent(text);
-    document.getElementById('sendTg').href='https://t.me/share/url?url=&text='+encodeURIComponent(text);
+    var t='Заявка MELLSTROY\nИмя: '+f.name.value.trim()+'\nТелефон: '+f.phone.value.trim()+(f.msg.value.trim()?'\nЗадача: '+f.msg.value.trim():'');
+    document.getElementById('sendWa').href='https://wa.me/37499000000?text='+encodeURIComponent(t);
+    document.getElementById('sendTg').href='https://t.me/share/url?url=&text='+encodeURIComponent(t);
     document.getElementById('formBox').style.display='none';
-    document.getElementById('formDone').style.display='block';
+    document.getElementById('done').style.display='block';
   });
-
-  /* ---- появление блоков при скролле ---- */
-  if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:.12});
-    document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
-  }else{document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in')})}
 })();
 </script>
 </body>
